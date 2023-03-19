@@ -15998,7 +15998,10 @@ void rtw_join_done_chk_ch(_adapter *adapter, int join_res)
 						ht_option = mlme->htpriv.ht_option;
 						#endif
 
-						rtw_cfg80211_ch_switch_notify(iface
+						// rtw_cfg80211_ch_switch_notify(iface
+						// 	, mlmeext->cur_channel, mlmeext->cur_bwmode, mlmeext->cur_ch_offset
+						// 	, ht_option);
+						cfg80211_ch_switch_started_notify(iface
 							, mlmeext->cur_channel, mlmeext->cur_bwmode, mlmeext->cur_ch_offset
 							, ht_option);
 						#endif
